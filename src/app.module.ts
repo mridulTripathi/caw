@@ -6,9 +6,10 @@ import { UsersModule } from './users/users.module';
 import { MovieModule } from './movie/movie.module';
 import { DatabaseModule } from './database/database.module';
 import { Database } from './database';
+import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({
-  imports: [AuthModule, UsersModule, MovieModule, DatabaseModule],
+  imports: [AuthModule, UsersModule, MovieModule, DatabaseModule, MongooseModule.forRoot('mongodb+srv://mridul:qweasdrf@caw-cluster.gjylq.mongodb.net/caw-db?retryWrites=true&w=majority')],
   controllers: [AppController],
   providers: [AppService, Database],
 })
